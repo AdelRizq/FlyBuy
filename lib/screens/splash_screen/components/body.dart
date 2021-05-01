@@ -4,6 +4,7 @@ import './splash_content.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 import '../../../components/default_button.dart';
+import '../../sign_in/sign_in_screen.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -61,7 +62,12 @@ class _BodyState extends State<Body> {
                 Spacer(flex: 4),
                 Padding(
                   padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-                  child: DefaultButton(text: "Continue", press: () {}),
+                  child: DefaultButton(
+                    text: "Continue",
+                    press: () {
+                      Navigator.pushNamed(context, SignInScreen.routeName);
+                    },
+                  ),
                 ),
                 Spacer(flex: 2),
               ],

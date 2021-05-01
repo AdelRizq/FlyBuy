@@ -15,9 +15,7 @@ class SplashContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Spacer(
-          flex: 2,
-        ),
+        Spacer(flex: 2),
         Text(
           "FlyBuy",
           style: TextStyle(
@@ -30,7 +28,7 @@ class SplashContent extends StatelessWidget {
           text,
           textAlign: TextAlign.center,
         ),
-        Spacer(),
+        Spacer(flex: 2),
         Image.asset(
           image,
           width: getProportionateScreenWidth(240),
