@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy/screens/forgot_password/forgot_password_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -36,9 +37,16 @@ class _SignFormState extends State<SignForm> {
               ),
               Text("Remember me"),
               Spacer(),
-              Text(
-                "Forget password",
-                style: TextStyle(decoration: TextDecoration.underline),
+              TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ForgotPasswordScreen(),
+                  ),
+                ),
+                child: Text(
+                  "Forgot password",
+                ),
               ),
             ],
           ),
