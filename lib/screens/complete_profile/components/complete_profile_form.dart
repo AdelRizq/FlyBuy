@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy/screens/otp/otp_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -35,7 +36,12 @@ class _SignFormState extends State<CompleteProfileForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
-                // TODO: go to OTP screen
+                print(this.phone);
+                Navigator.pushNamed(
+                  context,
+                  OTPScreen.routeName,
+                  arguments: this.phone,
+                );
               }
             },
           ),
