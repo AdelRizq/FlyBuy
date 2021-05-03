@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy/constants.dart';
 
-import './sign_in_form.dart';
+import '../../../constants.dart';
+import './sign_up_form.dart';
 import '../../../size_config.dart';
 import '../../../components/social_card.dart';
-import '../../../components/no_account_text.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -18,19 +17,19 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SizedBox(height: SizeConfig.screenHeight * 0.02),
                 Text(
-                  "Welcome Back",
+                  "Register Account",
                   style: headingStyle,
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  "Sign in with your email and password\nor continue with social media",
+                  "Complete your details or continue\nwith social media",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.06),
+                SignUpForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.06),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -49,7 +48,10 @@ class Body extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
-                NoAccountText()
+                Text(
+                  "By continuing you confirm that you agree\nwith our terms and conditions",
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
           ),

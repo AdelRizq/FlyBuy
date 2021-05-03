@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy/components/default_button.dart';
+import 'package:flybuy/constants.dart';
 import 'package:flybuy/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -15,11 +16,7 @@ class Body extends StatelessWidget {
         SizedBox(height: SizeConfig.screenHeight * 0.08),
         Text(
           "Login Success",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(30),
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: headingStyle,
         ),
         Spacer(),
         SizedBox(

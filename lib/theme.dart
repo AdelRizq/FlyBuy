@@ -40,6 +40,7 @@ TextTheme testTheme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
+    centerTitle: true,
     color: Colors.white,
     elevation: 0,
     brightness: Brightness.light,
