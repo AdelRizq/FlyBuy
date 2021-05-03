@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import './categories.dart';
 import './home_header.dart';
 import './special_offers.dart';
 import './discount_banner.dart';
-import '../../../constants.dart';
+import './popular_products.dart';
 import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
@@ -23,6 +22,9 @@ class Body extends StatelessWidget {
             Categories(),
             SizedBox(height: getProportionateScreenHeight(30)),
             SpecialOffers(),
+            SizedBox(height: getProportionateScreenHeight(30)),
+            PopularProducts(),
+            SizedBox(height: getProportionateScreenHeight(30)),
           ],
         ),
       ),
