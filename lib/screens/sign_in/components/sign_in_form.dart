@@ -15,8 +15,11 @@ class SignForm extends StatefulWidget {
 
 class _SignFormState extends State<SignForm> {
   final _formKey = GlobalKey<FormState>();
-  String email, password;
   final List<String> errors = [];
+
+  String email, password;
+
+  bool firstSubmit = false;
   bool remember = false;
 
   @override
@@ -61,6 +64,7 @@ class _SignFormState extends State<SignForm> {
                 _formKey.currentState.save();
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
+              firstSubmit = true;
             },
           ),
         ],
@@ -72,7 +76,7 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       onSaved: (newPassword) => this.password = newPassword,
       onChanged: (password) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (password) {
         if (password.isEmpty) {
@@ -96,7 +100,7 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       onSaved: (newEmail) => this.email = newEmail,
       onChanged: (email) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (email) {
         if (email.isEmpty) {

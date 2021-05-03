@@ -15,6 +15,7 @@ class _SignFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   String email, password, confirmPassword;
   final List<String> errors = [];
+  bool firstSubmit = false;
   bool remember = false;
 
   @override
@@ -35,8 +36,8 @@ class _SignFormState extends State<SignUpForm> {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
-                // TODO: go to complete profile screen
               }
+              firstSubmit = true;
             },
           ),
         ],
@@ -48,7 +49,7 @@ class _SignFormState extends State<SignUpForm> {
     return TextFormField(
       onSaved: (newEmail) => this.email = newEmail,
       onChanged: (email) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (email) {
         if (email.isEmpty) {
@@ -72,7 +73,7 @@ class _SignFormState extends State<SignUpForm> {
     return TextFormField(
       onSaved: (newPassword) => this.password = newPassword,
       onChanged: (password) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
         this.password = password;
       },
       validator: (password) {
@@ -97,7 +98,7 @@ class _SignFormState extends State<SignUpForm> {
     return TextFormField(
       onSaved: (newPassword) => this.confirmPassword = newPassword,
       onChanged: (password) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (password) {
         if (password != this.password) {

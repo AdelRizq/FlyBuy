@@ -16,6 +16,7 @@ class _SignFormState extends State<CompleteProfileForm> {
   String firstName, lastName, phone, address;
   final List<String> errors = [];
   bool remember = false;
+  bool firstSubmit = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ class _SignFormState extends State<CompleteProfileForm> {
                   arguments: this.phone,
                 );
               }
+              firstSubmit = true;
             },
           ),
         ],
@@ -54,7 +56,7 @@ class _SignFormState extends State<CompleteProfileForm> {
     return TextFormField(
       onSaved: (newName) => this.firstName = newName,
       onChanged: (name) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (name) {
         if (name.isEmpty) {
@@ -76,7 +78,7 @@ class _SignFormState extends State<CompleteProfileForm> {
     return TextFormField(
       onSaved: (newName) => this.lastName = newName,
       onChanged: (name) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (name) {
         if (name.isEmpty) {
@@ -98,7 +100,7 @@ class _SignFormState extends State<CompleteProfileForm> {
     return TextFormField(
       onSaved: (newPhone) => this.phone = newPhone,
       onChanged: (phone) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (phone) {
         if (phone.isEmpty) {
@@ -120,7 +122,7 @@ class _SignFormState extends State<CompleteProfileForm> {
     return TextFormField(
       onSaved: (newAddress) => this.address = newAddress,
       onChanged: (address) {
-        _formKey.currentState.validate();
+        if (firstSubmit) _formKey.currentState.validate();
       },
       validator: (address) {
         if (address.isEmpty) {

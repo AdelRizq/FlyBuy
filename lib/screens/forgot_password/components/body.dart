@@ -49,6 +49,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
   final _formKey = GlobalKey<FormState>();
   List<String> errors = [];
   String email;
+  bool firstSubmit = false;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
           child: TextFormField(
             onSaved: (newEmail) => this.email = newEmail,
             onChanged: (email) {
-              _formKey.currentState.validate();
+              if (firstSubmit) _formKey.currentState.validate();
             },
             validator: (email) {
               if (email.isEmpty) {
@@ -88,6 +89,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
             if (_formKey.currentState.validate()) {
               // send an email
             }
+            firstSubmit = true;
           },
         ),
         SizedBox(height: SizeConfig.screenHeight * 0.1),
