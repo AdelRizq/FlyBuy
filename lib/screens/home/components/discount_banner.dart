@@ -23,7 +23,7 @@ class DiscountBanner extends StatelessWidget {
           color: kPrimaryColor, borderRadius: BorderRadius.circular(20)),
       child: Text.rich(
         TextSpan(
-          text: "A Summer Surprise",
+          text: "A Summer Surprise\n",
           style: TextStyle(
             color: Colors.white,
           ),

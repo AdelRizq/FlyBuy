@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import './categories.dart';
 import './home_header.dart';
+import './special_offers.dart';
 import './discount_banner.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -16,12 +17,12 @@ class Body extends StatelessWidget {
           children: [
             SizedBox(height: getProportionateScreenHeight(20)),
             HomeHeader(),
-            SizedBox(height: getProportionateScreenHeight(20)),
+            SizedBox(height: getProportionateScreenHeight(30)),
             DiscountBanner(),
-            SizedBox(height: getProportionateScreenHeight(20)),
+            SizedBox(height: getProportionateScreenHeight(30)),
             Categories(),
-            SizedBox(height: getProportionateScreenHeight(20)),
-            
+            SizedBox(height: getProportionateScreenHeight(30)),
+            SpecialOffers(),
           ],
         ),
       ),
