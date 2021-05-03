@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy/screens/forgot_password/forgot_password_screen.dart';
+import 'package:flybuy/screens/login_success/login_success_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -58,6 +59,7 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           ),
@@ -70,26 +72,15 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       onSaved: (newPassword) => this.password = newPassword,
       onChanged: (password) {
-        if (password.isNotEmpty && errors.contains(kPassNullError)) {
-          setState(() {
-            errors.remove(kPassNullError);
-          });
-        } else if (password.isNotEmpty &&
-            password.length >= 8 &&
-            errors.contains(kShortPassError)) {
-          setState(() => errors.remove(kShortPassError));
-        }
-
-        return null;
+        _formKey.currentState.validate();
       },
       validator: (password) {
-        if (password.isEmpty && !errors.contains(kPassNullError)) {
-          errors.add(kPassNullError);
-        } else if (password.isNotEmpty &&
-            password.length <= 7 &&
-            !errors.contains(kShortPassError)) {
-          errors.add(kShortPassError);
+        if (password.isEmpty) {
+          return kPassNullError;
+        } else if (password.isNotEmpty && password.length <= 7) {
+          return kShortPassError;
         }
+
         return null;
       },
       decoration: InputDecoration(
@@ -105,27 +96,13 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       onSaved: (newEmail) => this.email = newEmail,
       onChanged: (email) {
-        if (email.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-        } else if (email.isNotEmpty &&
-            emailValidatorRegExp.hasMatch(email) &&
-            errors.contains(kInvalidEmailError)) {
-          setState(() => errors.remove(kInvalidEmailError));
-        }
-
-        return null;
+        _formKey.currentState.validate();
       },
       validator: (email) {
-        if (email.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
-        } else if (email.isNotEmpty &&
-            !emailValidatorRegExp.hasMatch(email) &&
-            !errors.contains(kInvalidEmailError)) {
-          setState(() => errors.add(kInvalidEmailError));
+        if (email.isEmpty) {
+          return kEmailNullError;
+        } else if (email.isNotEmpty && !emailValidatorRegExp.hasMatch(email)) {
+          return kInvalidEmailError;
         }
 
         return null;

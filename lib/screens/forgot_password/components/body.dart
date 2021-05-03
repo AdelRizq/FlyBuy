@@ -63,27 +63,14 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
           child: TextFormField(
             onSaved: (newEmail) => this.email = newEmail,
             onChanged: (email) {
-              if (email.isNotEmpty && errors.contains(kEmailNullError)) {
-                setState(() {
-                  errors.remove(kEmailNullError);
-                });
-              } else if (email.isNotEmpty &&
-                  emailValidatorRegExp.hasMatch(email) &&
-                  errors.contains(kInvalidEmailError)) {
-                setState(() => errors.remove(kInvalidEmailError));
-              }
-
-              return null;
+              _formKey.currentState.validate();
             },
             validator: (email) {
-              if (email.isEmpty && !errors.contains(kEmailNullError)) {
-                setState(() {
-                  errors.add(kEmailNullError);
-                });
+              if (email.isEmpty) {
+                return kEmailNullError;
               } else if (email.isNotEmpty &&
-                  !emailValidatorRegExp.hasMatch(email) &&
-                  !errors.contains(kInvalidEmailError)) {
-                setState(() => errors.add(kInvalidEmailError));
+                  !emailValidatorRegExp.hasMatch(email)) {
+                return kInvalidEmailError;
               }
 
               return null;
