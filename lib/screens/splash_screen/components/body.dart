@@ -56,7 +56,7 @@ class _BodyState extends State<Body> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                       splashData.length,
-                      (index) => buildDot(
+                      (index) => BuildDot(
                           pageNumber: index, currentPage: _currentPage)),
                 ),
                 Spacer(flex: 4),
@@ -79,8 +79,8 @@ class _BodyState extends State<Body> {
   }
 }
 
-class buildDot extends StatelessWidget {
-  const buildDot({
+class BuildDot extends StatelessWidget {
+  const BuildDot({
     Key key,
     this.pageNumber,
     this.currentPage,
