@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy/screens/complete_profile/complete_profile_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../../components/form_error.dart';
 import '../../../components/default_button.dart';
 import '../../../components/custom_suffix_icon.dart';
 
@@ -34,6 +34,7 @@ class _SignFormState extends State<SignUpForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
                 // TODO: go to complete profile screen
               }
             },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy/screens/complete_profile/complete_profile_screen.dart';
 
 import './screens/sign_in/sign_in_screen.dart';
 import './screens/sign_up/sign_up_screen.dart';
@@ -12,4 +13,5 @@ Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (ctx) => SignUpScreen(),
   LoginSuccessScreen.routeName: (ctx) => LoginSuccessScreen(),
   ForgotPasswordScreen.routeName: (ctx) => ForgotPasswordScreen(),
+  CompleteProfileScreen.routeName: (ctx) => CompleteProfileScreen(),
 };
