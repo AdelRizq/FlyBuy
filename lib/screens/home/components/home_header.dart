@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy/screens/cart/cart_screen.dart';
 
 import './search_field.dart';
 import '../../../size_config.dart';
@@ -21,7 +22,7 @@ class HomeHeader extends StatelessWidget {
           SearchField(),
           IconButtonWithCounter(
             svgSrc: 'assets/icons/Cart Icon.svg',
-            press: () {},
+            press: () => Navigator.pushNamed(context, CartScreen.routeName),
           ),
           IconButtonWithCounter(
             svgSrc: 'assets/icons/Bell.svg',

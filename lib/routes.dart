@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './screens/otp/otp_screen.dart';
+import './screens/cart/cart_screen.dart';
 import './screens/home/home_screen.dart';
 import './screens/sign_in/sign_in_screen.dart';
 import './screens/sign_up/sign_up_screen.dart';
@@ -12,6 +13,7 @@ import './screens/product_details/product_details_screen.dart';
 
 Map<String, WidgetBuilder> routes = {
   OTPScreen.routeName: (ctx) => OTPScreen(),
+  CartScreen.routeName: (ctx) => CartScreen(),
   HomeScreen.routeName: (ctx) => HomeScreen(),
   SplashScreen.routeName: (ctx) => SplashScreen(),
   SignInScreen.routeName: (ctx) => SignInScreen(),
