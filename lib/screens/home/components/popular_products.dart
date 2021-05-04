@@ -4,6 +4,7 @@ import './section_title.dart';
 import '../../../size_config.dart';
 import '../../../models/Product.dart';
 import '../../../components/product_card.dart';
+import '../../product_details/product_details_screen.dart';
 
 class PopularProducts extends StatelessWidget {
   const PopularProducts({
@@ -23,7 +24,14 @@ class PopularProducts extends StatelessWidget {
             children: [
               ...List.generate(
                 demoProducts.length,
-                (index) => ProductCard(product: demoProducts[index]),
+                (index) => ProductCard(
+                  product: demoProducts[index],
+                  press: () => Navigator.pushNamed(
+                    context,
+                    ProductDetailsScreen.routeName,
+                    arguments: demoProducts[index],
+                  ),
+                ),
               ),
               SizedBox(
                 width: getProportionateScreenWidth(20),
