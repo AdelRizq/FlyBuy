@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../size_config.dart';
 import './colors_dots.dart';
 import './product_images.dart';
 import './product_description.dart';
@@ -15,16 +16,22 @@ class Body extends StatelessWidget {
     return Column(
       children: [
         ProductImages(product: product),
-        TopRoundedContainer(
-          color: Colors.white,
-          child: ProductDescription(
-            product: product,
-            pressOnSeeMore: () {},
+        Container(
+          margin: EdgeInsets.only(top: getProportionateScreenWidth(20)),
+          child: TopRoundedContainer(
+            color: Colors.white,
+            child: ProductDescription(
+              product: product,
+              pressOnSeeMore: () {},
+            ),
           ),
         ),
-        TopRoundedContainer(
-          color: Color(0xFFF9F7F6),
-          child: ColorDots(product: product),
+        Container(
+          color: Colors.white,
+          child: TopRoundedContainer(
+            color: Color(0xFFF9F7F6),
+            child: ColorDots(product: product),
+          ),
         ),
       ],
     );

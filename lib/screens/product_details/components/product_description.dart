@@ -64,9 +64,10 @@ class ProductDescription extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: 5,
-            horizontal: getProportionateScreenWidth(20),
+          padding: EdgeInsets.only(
+            bottom: 5,
+            left: getProportionateScreenWidth(20),
+            right: getProportionateScreenWidth(20),
           ),
           child: SizedBox(
             child: TextButton(
