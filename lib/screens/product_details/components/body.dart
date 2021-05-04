@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './colors_dots.dart';
 import './product_images.dart';
 import './product_description.dart';
 import './top_rounded_container.dart';
@@ -20,6 +21,10 @@ class Body extends StatelessWidget {
             product: product,
             pressOnSeeMore: () {},
           ),
+        ),
+        TopRoundedContainer(
+          color: Color(0xFFF9F7F6),
+          child: ColorDots(product: product),
         ),
       ],
     );
