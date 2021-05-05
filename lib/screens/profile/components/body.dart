@@ -34,7 +34,7 @@ class Body extends StatelessWidget {
           SizedBox(height: getProportionateScreenHeight(20)),
           ProfileSectionButton(
             text: "Help Center",
-            icon: "assets/icons/User Icon.svg",
+            icon: "assets/icons/Question mark.svg",
             press: () {},
           ),
           SizedBox(height: getProportionateScreenHeight(20)),
