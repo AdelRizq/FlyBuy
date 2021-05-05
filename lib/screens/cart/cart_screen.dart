@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './components/body.dart';
 import '../../models/Cart.dart';
+import './components/custom_bottom_navigation_bar.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
@@ -11,6 +12,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: appBar(context),
       body: Body(),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 
