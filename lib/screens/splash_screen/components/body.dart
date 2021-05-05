@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import './build_dot.dart';
 import './splash_content.dart';
-import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../../components/default_button.dart';
 import '../../sign_in/sign_in_screen.dart';
+import '../../../components/default_button.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -15,12 +15,11 @@ class _BodyState extends State<Body> {
   int _currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to Tokoto, Let’s shop!",
+      "text": "Welcome to FlyBuy, Let’s shop!",
       "image": "assets/images/splash_1.png"
     },
     {
-      "text":
-          "We help people conect with store \naround United State of America",
+      "text": "We help people connect with store \naround the world",
       "image": "assets/images/splash_2.png"
     },
     {
@@ -76,30 +75,6 @@ class _BodyState extends State<Body> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class BuildDot extends StatelessWidget {
-  const BuildDot({
-    Key key,
-    this.pageNumber,
-    this.currentPage,
-  }) : super(key: key);
-
-  final int pageNumber, currentPage;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: kAnimationDuration,
-      margin: EdgeInsets.only(right: 6),
-      width: pageNumber == currentPage ? 20 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: pageNumber == currentPage ? kPrimaryColor : Color(0xFFD8D8D8),
-        borderRadius: BorderRadius.circular(3),
       ),
     );
   }
