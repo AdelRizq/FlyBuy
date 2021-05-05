@@ -1,6 +1,6 @@
-<div align='center'>
+<p align="middle">
 <img src="https://user-images.githubusercontent.com/40351413/117164491-f3c68100-adc4-11eb-8481-a449174ed2c2.png">
-</div>
+</p>
 
 [![GitHub contributors](https://img.shields.io/github/contributors/AdelRizq/FlyBuy)](https://github.com/AdelRizq/FlyBuy/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/AdelRizq/FlyBuy)](https://github.com/AdelRizq/FlyBuy/issues)
