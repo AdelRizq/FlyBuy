@@ -75,7 +75,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 SizedBox(
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
-                    text: "Continue",
+                    text: "Check out",
                     press: () {},
                   ),
                 ),

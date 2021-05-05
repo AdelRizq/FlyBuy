@@ -15,15 +15,15 @@ ThemeData theme() {
 
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(28),
+    borderRadius: BorderRadius.circular(24),
     borderSide: BorderSide(color: kTextColor),
-    gapPadding: 10,
+    gapPadding: 6,
   );
   return InputDecorationTheme(
     floatingLabelBehavior: FloatingLabelBehavior.always,
     contentPadding: EdgeInsets.symmetric(
       vertical: 20,
-      horizontal: 40,
+      horizontal: 30,
     ),
     border: outlineInputBorder,
     enabledBorder: outlineInputBorder,

@@ -27,6 +27,24 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
+      "assets/images/Helmet.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Colored Helmet",
+    price: 29.99,
+    description:
+        "A form of protective gear worn to protect the head. More specifically, a helmet complements the skull in protecting the human brain.",
+    rating: 4.3,
+    isPopular: true,
+  ),
+  Product(
+    id: 2,
+    images: [
       "assets/images/ps4_console_white_1.png",
       "assets/images/ps4_console_white_2.png",
       "assets/images/ps4_console_white_3.png",
@@ -46,9 +64,9 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
-    id: 2,
+    id: 5,
     images: [
-      "assets/images/Image Popular Product 2.png",
+      "assets/images/shoes2.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -56,11 +74,11 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Nike Sport White - Man Pant",
-    price: 50.5,
-    description: description,
-    rating: 4.1,
-    isPopular: true,
+    title: "Nike Shoes",
+    price: 40.00,
+    description: "A very nice shoes with attractive colors",
+    rating: 4.5,
+    isFavourite: false,
   ),
   Product(
     id: 3,

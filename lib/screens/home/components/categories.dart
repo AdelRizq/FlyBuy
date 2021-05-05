@@ -11,7 +11,7 @@ class Categories extends StatelessWidget {
     {"icon": "assets/icons/Bill Icon.svg", "text": "Bill"},
     {"icon": "assets/icons/Game Icon.svg", "text": "Game"},
     {"icon": "assets/icons/Gift Icon.svg", "text": "Daily Gift"},
-    {"icon": "assets/icons/Discover.svg", "text": "More"},
+    {"icon": "assets/icons/ellipsis.svg", "text": "More"},
   ];
 
   @override

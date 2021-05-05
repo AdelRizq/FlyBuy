@@ -34,46 +34,48 @@ class _BodyState extends State<Body> {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Column(children: [
-          Expanded(
-            flex: 3,
-            child: PageView.builder(
-              onPageChanged: (pageNumber) =>
-                  setState(() => _currentPage = pageNumber),
-              itemCount: splashData.length,
-              itemBuilder: (ctx, index) => SplashContent(
-                text: splashData[index]['text'],
-                image: splashData[index]['image'],
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3,
+              child: PageView.builder(
+                onPageChanged: (pageNumber) =>
+                    setState(() => _currentPage = pageNumber),
+                itemCount: splashData.length,
+                itemBuilder: (ctx, index) => SplashContent(
+                  text: splashData[index]['text'],
+                  image: splashData[index]['image'],
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 15),
-          Expanded(
-            flex: 2,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                      splashData.length,
-                      (index) => BuildDot(
-                          pageNumber: index, currentPage: _currentPage)),
-                ),
-                Spacer(flex: 4),
-                Padding(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-                  child: DefaultButton(
-                    text: "Continue",
-                    press: () {
-                      Navigator.pushNamed(context, SignInScreen.routeName);
-                    },
+            SizedBox(height: 15),
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                        splashData.length,
+                        (index) => BuildDot(
+                            pageNumber: index, currentPage: _currentPage)),
                   ),
-                ),
-                Spacer(flex: 2),
-              ],
+                  Spacer(flex: 4),
+                  Padding(
+                    padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+                    child: DefaultButton(
+                      text: "Continue",
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
+                    ),
+                  ),
+                  Spacer(flex: 2),
+                ],
+              ),
             ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }

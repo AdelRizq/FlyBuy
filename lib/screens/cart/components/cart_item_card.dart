@@ -22,7 +22,7 @@ class CartItemCard extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Color(0xFFF9F6F5),
+                color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Image.asset(cartItem.product.images[0]),

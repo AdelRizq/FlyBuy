@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../../components/form_error.dart';
 import '../../../components/default_button.dart';
 import '../../../components/custom_suffix_icon.dart';
 import '../../login_success/login_success_screen.dart';
@@ -54,8 +53,6 @@ class _SignFormState extends State<SignForm> {
               ),
             ],
           ),
-          SizedBox(height: getProportionateScreenHeight(30)),
-          FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
             text: "Continue",

@@ -26,6 +26,7 @@ class ProductCard extends StatelessWidget {
         padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
         child: SizedBox(
           width: getProportionateScreenWidth(width),
+          height: getProportionateScreenHeight(210),
           child: Column(
             children: [
               AspectRatio(
@@ -49,6 +50,7 @@ class ProductCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 2,
               ),
+              Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
