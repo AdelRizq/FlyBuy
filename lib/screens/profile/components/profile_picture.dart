@@ -16,8 +16,8 @@ class ProfilePicture extends StatelessWidget {
         SizedBox(
           width: getProportionateScreenWidth(120),
           height: getProportionateScreenWidth(120),
-          child: CircleAvatar(
-            maxRadius: 20,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(60),
             child: Image.asset(
               "assets/images/Profile Image.png",
               fit: BoxFit.cover,
